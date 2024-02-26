@@ -1,0 +1,21 @@
+def countSortedVowelStrings(n):
+    # Number of strings of length 1 is always 5
+    if n == 1:
+        return 5
+    
+    # Initialize counts for each vowel
+    a = e = i = o = u = 1
+    
+    # Use dynamic programming to calculate counts for strings of length 2 to n
+    for _ in range(2, n+1):
+        a, e, i, o, u = a + e + i + o + u, e + i + o + u, i + o + u, o + u, u
+    
+    return a + e + i + o + u
+
+def main():
+    n = int(input("Enter the value of n: "))
+    result = countSortedVowelStrings(n)
+    print("Output:", result)
+
+if __name__ == "__main__":
+    main()
