@@ -1,0 +1,14 @@
+def delchar(s, c):
+    if len(c) != 1:
+        return s
+    else:
+        return s.replace(c, '')
+
+def main():
+    s = input("Enter the string: ")
+    c = input("Enter a character to be deleted: ")
+    result = delchar(s, c)
+    print("String after the character is removed:", result)
+
+if __name__ == "__main__":
+    main()
